@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "Can I run Maktab One on my own server?",
-    a: "Absolutely. Maktab One is designed to run on your own server - not someone else's cloud. You can install it on any standard Linux server with straightforward setup instructions. We provide full documentation to guide you through the process, and our team is available to help.",
+    a: "Absolutely. Maktab One is designed to run on your own server - not someone else's cloud. You can install it on any standard server with straightforward setup instructions. We provide full documentation to guide you through the process, and our team is available to help.",
   },
   {
     q: "What features does the school management system include?",
@@ -34,8 +34,8 @@ const faqs = [
     a: "Security is built in. You control exactly what each staff member can see and do with 46 permission settings. Sensitive operations require extra verification. All passwords are securely protected, and every important action is logged for accountability. Because the system runs on your own servers, your data never leaves your control.",
   },
   {
-    q: "What database does Maktab One use?",
-    a: "Maktab One uses PostgreSQL, a trusted and reliable database system. Your data is stored in your own PostgreSQL instance on your own servers - we never access or store your school's data. You have full access to your database and can export or migrate your data anytime you want.",
+    q: "Where is my school's data stored?",
+    a: "Maktab One stores your data in a reliable database system on your own servers. We never access or store your school's data. You have full access to your information and can export it or move it anytime you want.",
   },
   {
     q: "How do student registrations and IDs work?",
@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: "How can I get started with Maktab One?",
-    a: "Start by booking a free demo with our team. We'll walk you through the system, answer your questions, and help you choose the right plan. When you're ready, we provide full support to get you up and running. Visit our GitHub repository for the source code and documentation, or contact us directly to schedule your demo.",
+    a: "Start by booking a free demo with our team. We'll walk you through the system, answer your questions, and help you choose the right plan. When you're ready, we provide full support to get you up and running. You can also find the source code and documentation on our GitHub page, or contact us directly to schedule your demo.",
   },
 ]
 

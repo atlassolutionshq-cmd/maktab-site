@@ -23,7 +23,7 @@ const reasons = [
   {
     icon: Cpu,
     title: "Built on Proven Modern Technology",
-    desc: "Maktab One uses reliable, well-supported technologies that are trusted by schools and businesses worldwide. The code is open-source, meaning it's transparent, auditable, and free from hidden backdoors. Deploy on any standard server with straightforward setup instructions.",
+    desc: "Maktab One uses reliable, well-supported technologies that are trusted by schools and businesses worldwide. The code is open-source, meaning it's transparent, auditable, and free from hidden backdoors. You can install it on any standard server with straightforward setup instructions.",
   },
 ]
 

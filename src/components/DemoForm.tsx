@@ -1,6 +1,7 @@
 "use client"
 
-import { type FormEvent, useState } from "react"
+import { type FormEvent, useState, useEffect, useRef } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { CalendarCheck, Send, CheckCircle } from "lucide-react"
 
@@ -11,6 +12,16 @@ interface DemoFormProps {
 export default function DemoForm({ inModal = false }: DemoFormProps) {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const formRef = useRef<HTMLFormElement>(null)
+
+  useEffect(() => {
+    if (!submitted) return
+    const timer = setTimeout(() => {
+      setSubmitted(false)
+      formRef.current?.reset()
+    }, 5000)
+    return () => clearTimeout(timer)
+  }, [submitted])
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -34,20 +45,30 @@ export default function DemoForm({ inModal = false }: DemoFormProps) {
     setSubmitted(true)
   }
 
-  if (submitted) {
-    return (
-      <div className="flex flex-col items-center justify-center py-12 text-center">
-        <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
-          <CheckCircle className="h-7 w-7" />
-        </div>
-        <h3 className="text-xl font-bold tracking-tight mb-2">Request sent!</h3>
-        <p className="text-sm text-muted-foreground max-w-xs">
-          We&apos;ll reach out within 24 hours to schedule your demo. Check your
-          email and phone.
-        </p>
-      </div>
-    )
-  }
+  const successView = (
+    <motion.div
+      key="success"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] as const }}
+      className="flex flex-col items-center justify-center py-12 text-center"
+    >
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 0.1, type: "spring", stiffness: 200, damping: 15 }}
+        className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4"
+      >
+        <CheckCircle className="h-7 w-7" />
+      </motion.div>
+      <h3 className="text-xl font-bold tracking-tight mb-2">Request sent!</h3>
+      <p className="text-sm text-muted-foreground max-w-xs">
+        We&apos;ll reach out within 24 hours to schedule your demo. Check your
+        email and phone.
+      </p>
+    </motion.div>
+  )
 
   const fields = (
     <div className="space-y-4">
@@ -133,6 +154,38 @@ export default function DemoForm({ inModal = false }: DemoFormProps) {
     </div>
   )
 
+  const formView = (
+    <motion.div
+      key="form"
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }}
+    >
+      <form ref={formRef} onSubmit={handleSubmit}>
+        {fields}
+        <Button
+          type="submit"
+          disabled={loading}
+          size="lg"
+          className="w-full mt-6 rounded-xl font-bold h-12 text-base"
+        >
+          {loading ? (
+            <span className="flex items-center gap-2">
+              <span className="h-4 w-4 rounded-full border-2 border-white/30 border-t-white animate-spin" />
+              Sending…
+            </span>
+          ) : (
+            <span className="flex items-center gap-2">
+              <Send className="h-4 w-4" />
+              {inModal ? "Send Request" : "Book a Demo"}
+            </span>
+          )}
+        </Button>
+      </form>
+    </motion.div>
+  )
+
   if (inModal) {
     return (
       <div className="p-6">
@@ -147,27 +200,11 @@ export default function DemoForm({ inModal = false }: DemoFormProps) {
             </p>
           </div>
         </div>
-        <form onSubmit={handleSubmit}>
-          {fields}
-          <Button
-            type="submit"
-            disabled={loading}
-            size="lg"
-            className="w-full mt-6 rounded-xl font-bold h-12 text-base"
-          >
-            {loading ? (
-              <span className="flex items-center gap-2">
-                <span className="h-4 w-4 rounded-full border-2 border-white/30 border-t-white animate-spin" />
-                Sending…
-              </span>
-            ) : (
-              <span className="flex items-center gap-2">
-                <Send className="h-4 w-4" />
-                Send Request
-              </span>
-            )}
-          </Button>
-        </form>
+        <div className="relative min-h-[200px]">
+          <AnimatePresence mode="wait">
+            {submitted ? successView : formView}
+          </AnimatePresence>
+        </div>
       </div>
     )
   }
@@ -189,27 +226,11 @@ export default function DemoForm({ inModal = false }: DemoFormProps) {
         </div>
 
         <div className="rounded-2xl border border-border/50 bg-card p-6 md:p-8 shadow-sm">
-          <form onSubmit={handleSubmit}>
-            {fields}
-            <Button
-              type="submit"
-              disabled={loading}
-              size="lg"
-              className="w-full mt-6 rounded-xl font-bold h-12 text-base"
-            >
-              {loading ? (
-                <span className="flex items-center gap-2">
-                  <span className="h-4 w-4 rounded-full border-2 border-white/30 border-t-white animate-spin" />
-                  Sending…
-                </span>
-              ) : (
-                <span className="flex items-center gap-2">
-                  <Send className="h-4 w-4" />
-                  Book a Demo
-                </span>
-              )}
-            </Button>
-          </form>
+          <div className="relative min-h-[300px]">
+            <AnimatePresence mode="wait">
+              {submitted ? successView : formView}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>

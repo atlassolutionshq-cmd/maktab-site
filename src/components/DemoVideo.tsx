@@ -71,11 +71,7 @@ export default function DemoVideo() {
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-card p-6">
               <p className="text-muted-foreground text-center">
-                No demo video configured. Set{" "}
-                <code className="text-sm bg-muted px-1.5 py-0.5 rounded font-mono">
-                  NEXT_PUBLIC_YOUTUBE_VIDEO_ID
-                </code>{" "}
-                in your environment.
+                Demo video coming soon. Contact us to see a live walkthrough.
               </p>
             </div>
           )}

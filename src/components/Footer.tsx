@@ -1,4 +1,5 @@
 import { Separator } from "@/components/ui/separator"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -7,10 +8,12 @@ export default function Footer() {
         <div className="grid sm:grid-cols-4 gap-8">
           <div className="sm:col-span-1">
             <div className="flex items-center gap-2.5 mb-3">
-              <img
+              <Image
                 src="/logo.png"
                 alt="Maktab One logo"
                 className="h-7 w-auto"
+                width={50}
+                height={50}
               />
               <span className="font-bold text-base tracking-tight">Maktab One</span>
             </div>
@@ -34,18 +37,17 @@ export default function Footer() {
             <h3 className="font-bold text-sm mb-4">Resources</h3>
             <div className="flex flex-col gap-2.5">
               <a href="https://github.com/anomalyco/maktab-one" className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-4 rounded-sm">GitHub</a>
-              <a href="/llms.txt" className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-4 rounded-sm">AI Context</a>
             </div>
           </div>
 
           <div>
             <h3 className="font-bold text-sm mb-4">Contact</h3>
             <div className="flex flex-col gap-2.5">
-              <a href="mailto:hello@maktab.one" className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-4 rounded-sm">
+              <a href="mailto:info@maktabone.org" className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-4 rounded-sm">
                 hello@maktab.one
               </a>
               <p className="text-sm text-muted-foreground">
-                Self-hosted school management
+                School management software
               </p>
             </div>
           </div>

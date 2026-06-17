@@ -85,7 +85,7 @@ const jsonLd = {
         "@type": "Offer",
         price: "0",
         priceCurrency: "USD",
-        description: "Free and open-source software (MIT license). Self-hosted on your own infrastructure.",
+        description: "Free and open-source. Install on your own servers with no licensing fees.",
       },
       author: {
         "@type": "Organization",

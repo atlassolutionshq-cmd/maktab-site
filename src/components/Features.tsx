@@ -30,7 +30,7 @@ const features = [
   {
     icon: ShieldCheck,
     title: "Staff Access & Data Security",
-    desc: "Control exactly what each staff member can see and do with 46 permission settings. Sensitive operations require additional verification. Passwords are securely hashed, and every important action is logged for accountability. Your data stays yours - always.",
+    desc: "Control exactly what each staff member can see and do with 46 permission settings. Sensitive operations require additional verification. Passwords are securely protected, and every important action is recorded for accountability. Your data stays yours - always.",
   },
   {
     icon: BarChart3,
