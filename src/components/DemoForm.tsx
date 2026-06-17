@@ -18,10 +18,18 @@ export default function DemoForm({ inModal = false }: DemoFormProps) {
     const form = new FormData(e.currentTarget)
     const data = Object.fromEntries(form.entries())
 
-    console.log("Demo request:", data)
+    try {
+      const res = await fetch("/api/demo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
 
-    // Simulate async send
-    await new Promise((r) => setTimeout(r, 1200))
+      if (!res.ok) throw new Error("Failed to send")
+    } catch (error) {
+      console.error("Demo request failed:", error)
+    }
+
     setLoading(false)
     setSubmitted(true)
   }
