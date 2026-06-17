@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion"
 
 const stats = [
   { value: 14, suffix: "+", label: "Feature Modules" },
-  { value: 46, suffix: "", label: "Granular Permissions" },
+  { value: 46, suffix: "", label: "Staff Access Controls" },
   { value: 99.9, suffix: "%", label: "Guaranteed Uptime" },
   { value: 5, suffix: "K+", label: "Students per Instance" },
 ]
@@ -47,8 +47,9 @@ export default function StatsBar() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section ref={ref} className="py-24 md:py-32 border-y border-border/40 bg-white">
+    <section ref={ref} aria-labelledby="stats-heading" className="py-24 md:py-32 border-y border-border/40 bg-white">
       <div className="mx-auto max-w-6xl px-6">
+        <h2 id="stats-heading" className="sr-only">Maktab One by the numbers</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s, i) => (
             <motion.div

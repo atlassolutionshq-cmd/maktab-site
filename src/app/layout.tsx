@@ -15,28 +15,28 @@ const geistMono = Geist_Mono({
 const siteUrl = "https://maktab.one";
 
 export const metadata: Metadata = {
-  title: "Maktab One — Open-Source School Management System | Self-Hosted",
+  title: "Maktab One - School Management Software | Run Your School Your Way",
   description:
-    "Maktab One is a self-hosted, open-source school management system for K-12 schools and colleges. Manage student records, fee collection, invoicing, academic sessions, staff, and guardian portals with enterprise-grade security and no vendor lock-in.",
+    "Maktab One is school management software built for K-10 schools and colleges. Automate fee collection, track student records, manage staff access, and keep parents informed - all on your own servers with complete data privacy.",
   keywords: [
-    "school management system",
-    "open source school management",
-    "student information system",
-    "school administration software",
-    "fee collection software",
-    "school ERP",
-    "self-hosted school management",
-    "K-12 school software",
-    "student records management",
-    "school billing software",
+    "school management software",
+    "school administration system",
+    "student record management",
+    "fee collection software for schools",
+    "school management system Pakistan",
+    "school ERP system",
+    "school data management",
+    "K-10 school software",
+    "private school management software",
+    "school billing and invoicing",
   ],
   authors: [{ name: "Maktab One" }],
   metadataBase: new URL(siteUrl),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Maktab One — Open-Source School Management System",
+    title: "Maktab One - School Management Software for Modern Schools",
     description:
-      "Self-hosted school management platform for student records, fee collection, academic sessions, and staff management. Enterprise security. Zero vendor lock-in.",
+      "Automate fee collection, manage student records, and keep parents informed. Self-hosted school management software with no vendor lock-in and complete data privacy.",
     url: siteUrl,
     siteName: "Maktab One",
     type: "website",
@@ -46,15 +46,15 @@ export const metadata: Metadata = {
         url: "/logo.png",
         width: 512,
         height: 512,
-        alt: "Maktab One",
+        alt: "Maktab One school management software",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maktab One — Open-Source School Management System",
+    title: "Maktab One - School Management Software",
     description:
-      "Self-hosted school management platform. Student records, fee collection, academic sessions, guardian portal. Enterprise-grade security.",
+      "Automate fee collection, manage student records, keep parents informed. Self-hosted school management software with complete data privacy.",
     images: ["/logo.png"],
   },
   robots: {
@@ -79,13 +79,13 @@ const jsonLd = {
       applicationCategory: "EducationApplication",
       operatingSystem: "Linux, macOS, Windows",
       description:
-        "Self-hosted, open-source school management system for K-12 schools and colleges. Features student management, fee collection and invoicing, academic session tracking, RBAC security, reports and analytics, and a guardian portal.",
+        "A self-hosted school management system for K-10 schools and colleges. Manage student records, automate fee collection, track academics, control staff access, generate reports, and provide parents a dedicated portal - all while keeping your data on your own servers.",
       url: siteUrl,
       offers: {
         "@type": "Offer",
         price: "0",
         priceCurrency: "USD",
-        description: "Open source (MIT license). Self-hosted on your infrastructure.",
+        description: "Free and open-source software (MIT license). Self-hosted on your own infrastructure.",
       },
       author: {
         "@type": "Organization",
@@ -97,7 +97,7 @@ const jsonLd = {
       name: "Maktab One",
       url: siteUrl,
       description:
-        "Self-hosted, open-source school management system for K-12 schools and colleges.",
+        "School management software for K-10 schools and colleges. Automate fee collection, manage student records, and keep parents informed - all self-hosted with complete data privacy.",
       potentialAction: {
         "@type": "SearchAction",
         target: {

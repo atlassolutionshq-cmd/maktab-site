@@ -7,23 +7,23 @@ import { Database, Lock, School, Cpu } from "lucide-react"
 const reasons = [
   {
     icon: School,
-    title: "Built for Schools, Not Generic CRM",
-    desc: "Purpose-built for K-12 schools, colleges, and educational institutions — not a repurposed CRM. Native support for academic sessions, class-section hierarchies, fee structure per session, bulk student promotions, attendance tracking, and student lifecycle management from enrollment to graduation.",
+    title: "Built for Schools, Not Repurposed Software",
+    desc: "Maktab One was designed specifically for K-10 schools and colleges - it's not a generic system squeezed into an educational shape. Everything from academic sessions and class hierarchies to fee structures and student promotions works the way your school actually operates.",
   },
   {
     icon: Database,
-    title: "Data You Own — Zero Vendor Lock-In",
-    desc: "Self-hosted on your own VPS or server with PostgreSQL. Full database access, complete data portability, no subscription traps, and no third-party data processing. Maktab One never accesses or stores your institutional data. Export everything at any time.",
+    title: "Your Data Stays Yours - Always",
+    desc: "Run Maktab One on your own servers, not someone else's cloud. You have full access to your data, can export it anytime, and no third party ever touches your student or financial records. No subscription traps, no hidden fees, no vendor lock-in.",
   },
   {
     icon: Lock,
-    title: "Enterprise-Grade Security",
-    desc: "Role-based access control with 46 granular permissions across 7 modules. JWT authentication with OTP email verification for sensitive operations. CSRF double-submit cookie pattern prevents cross-site request forgery. Hashed refresh token rotation with server-side invalidation. Argon2 password hashing. Full audit logging for compliance.",
+    title: "Security You Can Rely On",
+    desc: "Control who sees what with 46 staff permission settings. Sensitive operations need extra approval. Passwords are protected with strong encryption, and every important action is logged. Your school's data is safe, private, and always under your control.",
   },
   {
     icon: Cpu,
-    title: "Modern Open-Source Stack",
-    desc: "Built with Express.js 5, Prisma 7 ORM, PostgreSQL, Next.js 16 with React 19, Tailwind CSS 4, and shadcn/ui. Clean modular monolith architecture with 17 feature modules. Swagger API documentation. Runs on any Linux VPS with Docker Compose and Caddy reverse proxy.",
+    title: "Built on Proven Modern Technology",
+    desc: "Maktab One uses reliable, well-supported technologies that are trusted by schools and businesses worldwide. The code is open-source, meaning it's transparent, auditable, and free from hidden backdoors. Deploy on any standard server with straightforward setup instructions.",
   },
 ]
 
@@ -54,11 +54,11 @@ export default function WhyMaktab() {
             Why Maktab One
           </div>
           <h2 className="text-4xl md:text-5xl font-black tracking-tighter">
-            Built different by design
+            Why schools choose Maktab One
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Not another edtech platform. A purpose-built institutional system
-            that puts you in control of your data, security, and infrastructure.
+            Not another edtech platform. A system built for schools that puts
+            you in control of your data, your security, and your operations.
           </p>
         </motion.div>
 

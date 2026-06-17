@@ -27,6 +27,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => { document.body.style.overflow = "" }
+  }, [open])
+
   const closeMobile = () => setOpen(false)
 
   return (
@@ -56,7 +65,7 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-4 rounded-sm"
               >
                 {l.label}
               </a>
@@ -93,7 +102,7 @@ export default function Navbar() {
                     key={l.href}
                     href={l.href}
                     onClick={closeMobile}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground py-2"
+                    className="text-sm font-medium text-muted-foreground hover:text-foreground py-2 focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-4 rounded-sm"
                   >
                     {l.label}
                   </a>

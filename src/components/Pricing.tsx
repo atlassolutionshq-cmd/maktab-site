@@ -15,10 +15,10 @@ const plans = [
     students: "Up to 2,000 students",
     popular: false,
     features: [
-      "Student management with bulk CSV import",
+      "Student management with bulk import",
       "Fee collection & automated invoicing",
       "Academic session & class management",
-      "Role-based access control",
+      "Staff access controls",
       "Guardian portal",
       "Email support",
     ],
@@ -52,7 +52,7 @@ const plans = [
       "Everything in Professional",
       "Unlimited students",
       "Custom feature development",
-      "SSO / SAML integration",
+      "Single sign-on (SSO) integration",
       "SLA guarantee",
       "Dedicated account manager",
     ],
@@ -149,21 +149,17 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <a
-                href={plan.cta === "Contact Us" ? "#demo-form" : "#demo-form"}
-                className="block"
+              <Button
+                size="lg"
+                variant={plan.popular ? "default" : "outline"}
+                className={`rounded-xl font-bold h-12 w-full text-base ${
+                  plan.popular ? "shadow-lg shadow-primary/25" : ""
+                }`}
+                onClick={() => document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" })}
               >
-                <Button
-                  size="lg"
-                  variant={plan.popular ? "default" : "outline"}
-                  className={`rounded-xl font-bold h-12 w-full text-base ${
-                    plan.popular ? "shadow-lg shadow-primary/25" : ""
-                  }`}
-                >
-                  {plan.cta}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
+                {plan.cta}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
 
               <p className="text-xs text-center text-muted-foreground mt-3">
                 3 months free support included

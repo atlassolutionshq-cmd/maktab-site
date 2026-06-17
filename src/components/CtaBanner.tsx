@@ -24,33 +24,30 @@ export default function CtaBanner() {
 
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-primary-foreground">
-              Ready to take control of your school data?
+              Ready to simplify your school operations?
             </h2>
             <p className="mt-4 text-lg text-primary-foreground/70">
-              Deploy Maktab One on your own infrastructure in minutes. No vendor lock-in,
-              no subscription fees, no data leaving your servers. Book a demo or get started
-              with our open-source build.
+              See Maktab One in action with a free, no-obligation demo. Your data stays
+              on your servers, you stay in control, and our team helps you every step of the way.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#demo-form">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="rounded-xl font-bold h-12 px-8 text-base shadow-xl"
-                >
-                  Book a Demo
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
-              <a href="#pricing">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-xl font-bold h-12 px-8 text-base border-primary-foreground/20 text-primary-foreground hover:bg-white/10"
-                >
-                  View Plans
-                </Button>
-              </a>
+              <Button
+                size="lg"
+                variant="secondary"
+                className="rounded-xl font-bold h-12 px-8 text-base shadow-xl"
+                onClick={() => document.getElementById("demo-form")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                Book a Demo
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-xl font-bold h-12 px-8 text-base border-primary-foreground/20 text-primary-foreground hover:bg-white/10"
+                onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                View Plans
+              </Button>
             </div>
           </div>
         </motion.div>

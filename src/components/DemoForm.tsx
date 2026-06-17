@@ -52,7 +52,7 @@ export default function DemoForm({ inModal = false }: DemoFormProps) {
           name="name"
           required
           placeholder="Your full name"
-          className="w-full h-11 rounded-xl border border-border bg-background px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+          className="w-full h-11 rounded-xl border border-border bg-background px-4 text-sm outline-none hover:border-muted-foreground/30 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
         />
       </div>
       <div>
@@ -65,7 +65,7 @@ export default function DemoForm({ inModal = false }: DemoFormProps) {
           type="email"
           required
           placeholder="you@school.edu"
-          className="w-full h-11 rounded-xl border border-border bg-background px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+          className="w-full h-11 rounded-xl border border-border bg-background px-4 text-sm outline-none hover:border-muted-foreground/30 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
         />
       </div>
       <div>
@@ -78,7 +78,7 @@ export default function DemoForm({ inModal = false }: DemoFormProps) {
           type="tel"
           required
           placeholder="+92 300 1234567"
-          className="w-full h-11 rounded-xl border border-border bg-background px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+          className="w-full h-11 rounded-xl border border-border bg-background px-4 text-sm outline-none hover:border-muted-foreground/30 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
         />
       </div>
       <div>
@@ -90,7 +90,7 @@ export default function DemoForm({ inModal = false }: DemoFormProps) {
           name="institution"
           required
           placeholder="e.g. Beaconhouse School"
-          className="w-full h-11 rounded-xl border border-border bg-background px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+          className="w-full h-11 rounded-xl border border-border bg-background px-4 text-sm outline-none hover:border-muted-foreground/30 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
         />
       </div>
       <div>
@@ -101,7 +101,7 @@ export default function DemoForm({ inModal = false }: DemoFormProps) {
           id="students"
           name="students"
           defaultValue=""
-          className="w-full h-11 rounded-xl border border-border bg-background px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+          className="w-full h-11 rounded-xl border border-border bg-background px-4 text-sm outline-none hover:border-muted-foreground/30 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
         >
           <option value="" disabled>Select range</option>
           <option value="1-500">1 – 500</option>
@@ -119,7 +119,7 @@ export default function DemoForm({ inModal = false }: DemoFormProps) {
           name="message"
           rows={3}
           placeholder="Any specific requirements?"
-          className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+          className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none hover:border-muted-foreground/30 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
         />
       </div>
     </div>

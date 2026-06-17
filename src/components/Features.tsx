@@ -15,32 +15,32 @@ const features = [
   {
     icon: Users,
     title: "Student Management",
-    desc: "Enroll, track, and manage student profiles with bulk CSV import supporting thousands of records. Auto-generate unique registration numbers (STU-XXX format), maintain complete academic history with session-to-session promotion tracking, and manage student documents, photographs, and contact information — all in one place.",
+    desc: "Enroll students, keep digital records, and track their full academic journey from day one to graduation. Import thousands of records at once from a spreadsheet. Every student gets a unique ID, and their complete history - classes, sessions, promotions - stays organized in one place.",
   },
   {
     icon: Receipt,
     title: "Fee Collection & Invoicing",
-    desc: "Automate fee invoice generation based on configurable fee structures per class and session. Record payments against invoices with partial payment support, track defaulters in real time, manage concessions and discounts with audit trails, and generate collection reports — all with real-time balance updates across the system.",
+    desc: "Automate invoices based on your fee structure per class and session. Record payments, handle partial payments, track defaulters instantly, and manage discounts - all with a clear record of every transaction. Know exactly who has paid and who hasn't, in real time.",
   },
   {
     icon: BookOpen,
     title: "Academic Management",
-    desc: "Configure academic sessions, classes, sections, and subjects with flexible scheduling. Perform end-of-year student promotions between sessions with a background job processor that handles bulk operations. Track every student's full academic journey from enrollment through graduation with complete session history.",
+    desc: "Set up academic sessions, classes, sections, and subjects your way. Promote students between sessions in bulk at year-end. Every student's journey - from enrollment to graduation - is tracked and accessible, making academic planning effortless.",
   },
   {
     icon: ShieldCheck,
-    title: "RBAC & Security",
-    desc: "Role-based access control with 46 granular permissions across 7 modules. Multi-factor authentication via JWT tokens with OTP email verification. CSRF double-submit cookie pattern, hashed refresh token rotation with server-side invalidation, and Argon2 password hashing. Full audit logging tracks all sensitive operations.",
+    title: "Staff Access & Data Security",
+    desc: "Control exactly what each staff member can see and do with 46 permission settings. Sensitive operations require additional verification. Passwords are securely hashed, and every important action is logged for accountability. Your data stays yours - always.",
   },
   {
     icon: BarChart3,
     title: "Reports & Analytics",
-    desc: "Real-time dashboard with key institutional metrics including fee collection rates, student enrollment trends, and defaulter tracking. Generate financial reports, defaulter analysis with aging summaries, discount and concession impact reports, and collection performance analytics. All reports exportable for offline analysis.",
+    desc: "See your school's key numbers at a glance - fee collection rates, enrollment trends, and defaulter summaries. Generate financial reports, analyze discount impact, and track collection performance. All reports can be exported for offline review or sharing with stakeholders.",
   },
   {
     icon: UserCheck,
     title: "Guardian Portal",
-    desc: "Automated guardian account creation during student enrollment with email invitations and secure onboarding. Dedicated guardian dashboard for viewing fee status, payment history, invoices, and student academic progress. Self-service password reset flows with email verification. Guardians can track multiple students from a single account.",
+    desc: "Parents get their own account automatically when their child enrolls. They can view fee status, payment history, invoices, and academic progress from one dashboard. Password resets are self-service. One parent can track all their children from a single login.",
   },
 ]
 
@@ -71,11 +71,11 @@ export default function Features() {
             Everything you need
           </div>
           <h2 className="text-4xl md:text-5xl font-black tracking-tighter">
-            One platform, every workflow
+            One platform for your whole school
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            From the front office to the finance desk — Maktab One connects every
-            part of your institution with 14 integrated modules.
+            From the front office to the finance desk - Maktab One connects every
+            part of your institution in one place.
           </p>
         </motion.div>
 
