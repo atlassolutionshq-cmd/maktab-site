@@ -1,0 +1,34 @@
+# Maktab One — School Management System
+
+> Maktab One is a self-hosted, open-source school management system for K-12 schools, colleges, and educational institutions. It provides student management, fee collection and invoicing, academic session tracking, RBAC security, reports and analytics, and a guardian portal.
+
+## Key Features
+
+- **Student Management**: Enroll, track, and manage student profiles with bulk CSV import, auto-generated registration numbers (STU-XXX), and full academic history.
+- **Fee Collection & Invoicing**: Auto-generate invoices, record payments, track defaulters, manage concessions and discounts with real-time balance updates.
+- **Academic Management**: Configure sessions, classes, sections, subjects, and end-of-year promotions with full academic journey tracking.
+- **RBAC & Security**: 46 granular permissions across 7 modules. JWT authentication with OTP verification, hashed refresh token rotation, and CSRF double-submit cookie protection.
+- **Reports & Analytics**: Financial reports, defaulter analysis, discount summaries, collection reports, and real-time dashboard metrics.
+- **Guardian Portal**: Automated guardian account setup, email invitations, password reset flows, and a dedicated guardian dashboard for fee tracking and student progress.
+
+## Technical Stack
+
+- **Backend**: Express.js 5, Prisma 7 (ORM), PostgreSQL, Zod validation, TypeScript
+- **Frontend**: Next.js 16 (App Router), React 19, TanStack Query, Tailwind CSS 4, shadcn/ui
+- **Security**: JWT with HTTP-only cookies, OTP email verification, CSRF double-submit cookie, hashed refresh token rotation, Argon2 password hashing
+- **Deployment**: Docker Compose, self-hosted on VPS with Caddy reverse proxy and wildcard SSL
+
+## Architecture
+
+Maktab One follows a modular monolith architecture with 17 feature modules (auth, users, students, guardians, classes, sections, sessions, fees, fee-heads, invoices, payments, discounts, concessions, promotions, roles, audit logs, dashboard). The backend uses a controller-service-repository pattern with centralized error handling and Swagger API documentation.
+
+## Pricing
+
+See /pricing.md for detailed pricing information.
+
+## Links
+
+- Home: https://maktab.one/
+- Pricing: https://maktab.one/pricing.md
+- Documentation: docs/
+- GitHub: https://github.com/anomalyco/maktab-one
