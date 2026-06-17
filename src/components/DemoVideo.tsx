@@ -2,17 +2,14 @@
 
 import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
+import Image from "next/image"
+
+const YOUTUBE_ID = process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID || 'dFzhdUlGPfQ'
 
 export default function DemoVideo() {
   const [playing, setPlaying] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
   const isInView = useInView(ref, { once: true, margin: "-80px" })
-
-  const handlePlay = () => {
-    setPlaying(true)
-    videoRef.current?.play()
-  }
 
   return (
     <section id="demo" ref={ref} className="py-24 md:py-32">
@@ -41,15 +38,17 @@ export default function DemoVideo() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
           className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden border border-border/60 shadow-xl bg-card aspect-video"
         >
-          {!playing && (
+          {!playing ? (
             <div
               className="absolute inset-0 z-10 flex items-center justify-center group cursor-pointer"
-              onClick={handlePlay}
+              onClick={() => setPlaying(true)}
             >
-              <img
+              <Image
                 src="/screenshots/dashboard.png"
                 alt="Maktab One demo video - click to play"
                 className="absolute inset-0 w-full h-full object-cover"
+                width={100}
+                height={100}
               />
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
               <div className="relative z-10 flex flex-col items-center gap-3">
@@ -61,16 +60,25 @@ export default function DemoVideo() {
                 <span className="text-white font-bold text-sm">Play Overview</span>
               </div>
             </div>
+          ) : YOUTUBE_ID ? (
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}?autoplay=1`}
+              className="absolute inset-0 w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="Maktab One demo walkthrough"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center bg-card p-6">
+              <p className="text-muted-foreground text-center">
+                No demo video configured. Set{" "}
+                <code className="text-sm bg-muted px-1.5 py-0.5 rounded font-mono">
+                  NEXT_PUBLIC_YOUTUBE_VIDEO_ID
+                </code>{" "}
+                in your environment.
+              </p>
+            </div>
           )}
-          <video
-            ref={videoRef}
-            src="/demo.mov"
-            className="w-full h-full object-contain"
-            controls
-            playsInline
-            onEnded={() => setPlaying(false)}
-            onPause={() => {}}
-          />
         </motion.div>
       </div>
     </section>
