@@ -43,7 +43,7 @@ export default function CtaBanner() {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-xl font-bold h-12 px-8 text-base border-primary-foreground/20 text-primary-foreground hover:bg-white/10"
+                className="rounded-xl font-bold h-12 px-8 text-black border-primary-foreground/20 text-base hover:bg-white/10"
                 onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
               >
                 View Plans

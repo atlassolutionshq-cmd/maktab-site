@@ -1,13 +1,18 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
-import { Play, Mail } from "lucide-react"
 
 export default function DemoVideo() {
-  const [showPrompt, setShowPrompt] = useState(false)
+  const [playing, setPlaying] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const isInView = useInView(ref, { once: true, margin: "-80px" })
+
+  const handlePlay = () => {
+    setPlaying(true)
+    videoRef.current?.play()
+  }
 
   return (
     <section id="demo" ref={ref} className="py-24 md:py-32">
@@ -34,38 +39,38 @@ export default function DemoVideo() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
-          className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden border border-border/60 shadow-xl bg-card aspect-video flex items-center justify-center group cursor-pointer"
-          onClick={() => setShowPrompt(true)}
+          className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden border border-border/60 shadow-xl bg-card aspect-video"
         >
-          <img
-            src="/screenshots/dashboard.png"
-            alt="Maktab One product demo walkthrough showing student management, fee collection, and academic tracking features"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
-          {showPrompt ? (
-            <div className="relative z-10 flex flex-col items-center gap-3 px-6 text-center">
-              <div className="h-14 w-14 rounded-full bg-white/90 flex items-center justify-center">
-                <Mail className="h-6 w-6 text-foreground" />
+          {!playing && (
+            <div
+              className="absolute inset-0 z-10 flex items-center justify-center group cursor-pointer"
+              onClick={handlePlay}
+            >
+              <img
+                src="/screenshots/dashboard.png"
+                alt="Maktab One demo video - click to play"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+              <div className="relative z-10 flex flex-col items-center gap-3">
+                <div className="h-16 w-16 rounded-full bg-white/90 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                  <svg className="h-6 w-6 text-foreground ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+                <span className="text-white font-bold text-sm">Play Overview</span>
               </div>
-              <p className="text-white font-bold text-sm max-w-xs">
-                Request a live demo instead. Our team will walk you through the system.
-              </p>
-              <span
-                className="text-white/70 text-xs underline cursor-pointer hover:text-white transition-colors"
-                onClick={(e) => { e.stopPropagation(); setShowPrompt(false) }}
-              >
-                Dismiss
-              </span>
-            </div>
-          ) : (
-            <div className="relative z-10 flex flex-col items-center gap-3">
-              <div className="h-16 w-16 rounded-full bg-white/90 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
-                <Play className="h-6 w-6 text-foreground ml-0.5" />
-              </div>
-              <span className="text-white font-bold text-sm">Play Overview</span>
             </div>
           )}
+          <video
+            ref={videoRef}
+            src="/demo.mov"
+            className="w-full h-full object-contain"
+            controls
+            playsInline
+            onEnded={() => setPlaying(false)}
+            onPause={() => {}}
+          />
         </motion.div>
       </div>
     </section>
