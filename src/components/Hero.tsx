@@ -89,7 +89,7 @@ export default function Hero() {
             <div className="relative rounded-2xl overflow-hidden border border-border/60 shadow-2xl bg-card">
               <img
                 src="/screenshots/dashboard.png"
-                alt="Maktab One school management system dashboard showing fee collection, student records, and real-time institutional analytics"
+                alt="Maktab One school management dashboard overview showing fee collection, student enrollment, and key school metrics"
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />

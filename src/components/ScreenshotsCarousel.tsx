@@ -6,15 +6,18 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const SCREENSHOTS = [
   { src: "/screenshots/dashboard.png", label: "Dashboard", alt: "Maktab One school management dashboard overview showing fee collection, student enrollment, and key school metrics" },
-  { src: "/screenshots/fee-collection-desk.png", label: "Fee Collection Desk", alt: "Fee collection screen for recording payments, managing invoices, and tracking outstanding balances in Maktab One" },
-  { src: "/screenshots/students.png", label: "Student Management", alt: "Student records list showing enrolled students with profiles and academic history in Maktab One" },
-  { src: "/screenshots/roles-permissions.png", label: "Roles & Permissions", alt: "Staff access control settings showing permission management for different user roles in Maktab One" },
-  { src: "/screenshots/staff-users.png", label: "Staff Users", alt: "Staff management screen for adding teachers and administrators with role assignments" },
-  { src: "/screenshots/academic-session.png", label: "Academic Sessions", alt: "Academic session setup showing term configuration and date ranges for school management" },
+  { src: "/screenshots/students.png", label: "Students", alt: "Student records list showing enrolled students with profiles and academic history in Maktab One" },
+  { src: "/screenshots/recordfee.png", label: "Fee Collection", alt: "Fee collection screen for recording payments, managing invoices, and tracking outstanding balances" },
+  { src: "/screenshots/roles.png", label: "Roles & Permissions", alt: "Staff access control settings showing permission management for different user roles" },
+  { src: "/screenshots/staff.png", label: "Staff", alt: "Staff management screen for adding teachers and administrators with role assignments" },
+  { src: "/screenshots/sections.png", label: "Sections", alt: "Academic section setup showing class groupings and scheduling for school management" },
   { src: "/screenshots/classes.png", label: "Classes", alt: "Class management showing sections and teacher assignments in Maktab One" },
-  { src: "/screenshots/student-concession.png", label: "Student Concessions", alt: "Fee concession and discount management for student fee adjustments" },
-  { src: "/screenshots/guardian.png", label: "Guardian Management", alt: "Parent portal dashboard showing fee status, payment history, and student progress" },
-  { src: "/screenshots/promote-session.png", label: "Promotion Engine", alt: "End-of-year student promotion workflow for advancing students to the next session" },
+  { src: "/screenshots/concessions.png", label: "Concessions", alt: "Fee concession and discount management for student fee adjustments" },
+  { src: "/screenshots/guardian.png", label: "Guardian Portal", alt: "Parent portal dashboard showing fee status, payment history, and student progress" },
+  { src: "/screenshots/promotion.png", label: "Promotions", alt: "End-of-year student promotion workflow for advancing students to the next session" },
+  { src: "/screenshots/report.png", label: "Reports", alt: "Financial reports and analytics dashboard showing fee collection and defaulter summaries" },
+  { src: "/screenshots/logs.png", label: "Activity Logs", alt: "System activity logs tracking important actions and changes across the platform" },
+  { src: "/screenshots/settings.png", label: "Settings", alt: "System configuration and settings panel for customizing Maktab One" },
 ]
 
 export default function ScreenshotsCarousel() {
